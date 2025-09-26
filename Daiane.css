@@ -1,0 +1,315 @@
+/* ==================================== */
+/* 1. Estilos Gerais e Corpo da Página */
+/* ==================================== */
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    position: relative; 
+    
+    /* FUNDO GRADIENTE CORRIGIDO */
+    background-image: linear-gradient(to right, #ff9a9e, #fad0c4, #f8d5a2); 
+    /* Garante que o body ocupa 100% da altura da janela */
+    min-height: 100vh; 
+}
+
+h1 {
+    color: #800020; /* Tom de bordô ou vinho */
+    text-align: left;
+    /* Reduzida a margem superior para economizar espaço */
+    margin: 20px 0 15px 40px; 
+    font-size: 2.5em;
+    padding: 10px 0;
+    border-bottom: 3px solid #ff9a9e; 
+    
+    /* Animação do H1 */
+    animation: mover-h1 1.5s ease-out forwards;
+}
+
+@keyframes mover-h1 {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ==================================== */
+/* 2. Estilos da Galeria Principal (5 ITENS EM LINHA) */
+/* ==================================== */
+
+.conteudo-principal {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; /* Centraliza a galeria horizontalmente */
+    padding: 0 40px;
+}
+
+.galeria-imagens {
+    width: fit-content; 
+    margin-bottom: 30px; /* Reduzida a margem inferior */
+}
+
+.linha-imagens {
+    display: flex; 
+    flex-direction: row; 
+    gap: 20px; /* Reduzido o espaçamento entre as imagens */
+    flex-wrap: nowrap; 
+    width: fit-content;
+}
+
+.link-procedimento {
+    text-decoration: none;
+    color: inherit;
+    display: block; 
+}
+
+.procedimento {
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s, filter 0.5s;
+    /* Reduzida a largura do container */
+    width: 180px; 
+}
+
+.minha-imagem {
+    /* REDUÇÃO CHAVE: De 250px para 180px */
+    width: 180px; 
+    height: 180px; 
+    object-fit: cover; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    filter: grayscale(0%); 
+    transition: transform 0.3s, box-shadow 0.3s, filter 0.5s;
+}
+
+.procedimento p {
+    margin-top: 8px; /* Ajuste fino */
+    font-weight: bold;
+    font-size: 1.1em; /* Levemente reduzido o texto */
+    color: #444;
+}
+
+/* Efeito Hover */
+.procedimento:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.procedimento:hover .minha-imagem {
+    filter: grayscale(100%); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ==================================== */
+/* 3. Estilos da Imagem de Perfil e Caixa de Texto Abaixo (FLEXBOX) */
+/* ==================================== */
+
+.secao-apresentacao {
+    clear: both; 
+    max-width: 1200px; 
+    width: 100%;
+    margin-top: 30px; /* Reduzida a margem superior */
+    padding: 0 40px; 
+    display: flex; /* ATIVA O ALINHAMENTO LADO A LADO */
+    align-items: flex-start; 
+    justify-content: center; 
+}
+
+
+/* ESTILO DA IMAGEM ALINHADA À ESQUERDA */
+.imagem-perfil-esquerda {
+    /* Reduzida a largura da imagem de perfil */
+    width: 250px; 
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ESTILO PARA A CAIXA DE TEXTO */
+.box-texto-abaixo {
+    position: static; 
+    flex-grow: 1; 
+    max-width: 700px; 
+    padding: 20px; /* Levemente reduzido o padding */
+    background-color: #800020; 
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    margin-left: 30px; /* Levemente reduzido o margin */
+}
+
+
+.box-texto-abaixo h2 {
+    color: #ff9a9e; 
+    border-bottom: 2px solid white;
+    padding-bottom: 8px;
+    margin-top: 0;
+    font-size: 1.3em; /* Levemente reduzido o H2 */
+}
+
+.box-texto-abaixo p {
+    line-height: 1.5;
+    margin-bottom: 0;
+    font-size: 0.95em; /* Levemente reduzido o texto do parágrafo */
+}
+
+/* ESCONDE A CAIXA FIXA ANTIGA (Garantia) */
+.box-texto {
+    display: none; 
+}
+
+/* REMOVE A ANIMAÇÃO DE FADE-IN ANTIGA */
+@keyframes fade-in {
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* ==================================== */
+/* 4. Estilos das Páginas de Detalhe (remocao.html, hidragloss.html, etc.) */
+/* ==================================== */
+
+.detalhe-procedimento { 
+    max-width: 800px; 
+    margin: 50px auto; 
+    padding: 20px; 
+    background-color: white; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+}
+
+.detalhe-procedimento h1, .detalhe-procedimento h2 { 
+    color: #800020; 
+    border-bottom: 2px solid #ff9a9e; 
+    padding-bottom: 10px; 
+    margin-bottom: 20px; 
+}
+
+.detalhe-procedimento p { 
+    line-height: 1.6; 
+    color: #333; 
+    margin-bottom: 15px; 
+}
+
+.detalhe-procedimento ul { 
+    margin-bottom: 20px; 
+    padding-left: 25px;
+    list-style: disc;
+}
+
+.detalhe-procedimento ul li {
+    margin-bottom: 5px;
+}
+
+.botao-voltar { 
+    display: inline-block; 
+    margin-top: 20px; 
+    padding: 10px 20px; 
+    background-color: #800020; 
+    color: white; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    transition: background-color 0.3s; 
+}
+
+.botao-voltar:hover { 
+    background-color: #a00030; 
+}
+
+
+/* ==================================== */
+/* 5. MEDIA QUERIES (RESPONSIVIDADE PARA MOBILE) */
+/* ==================================== */
+
+/* O estilo abaixo será aplicado apenas em telas com largura máxima de 768px (smartphones e tablets pequenos) */
+@media (max-width: 768px) {
+    
+    /* 1. Ajustes Gerais */
+    h1 {
+        /* Centraliza o título no mobile e reduz as margens */
+        text-align: center;
+        margin: 20px auto 10px auto;
+        font-size: 2em;
+        width: 90%; 
+        border-bottom: 2px solid #ff9a9e; 
+    }
+    
+    .conteudo-principal {
+        padding: 0 10px; /* Reduz o padding lateral */
+    }
+
+    /* 2. Galeria de Procedimentos (Alinhamento Vertical) */
+    .galeria-imagens {
+        margin-bottom: 30px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .linha-imagens {
+        /* Permite que as imagens quebrem para a linha de baixo */
+        flex-wrap: wrap; 
+        /* Centraliza os itens quebrados */
+        justify-content: center; 
+        gap: 15px; /* Reduz um pouco mais o espaço */
+        width: 100%;
+    }
+
+    .procedimento {
+        /* Reduz o tamanho final da imagem no mobile para 130px */
+        width: 130px; 
+    }
+
+    .minha-imagem {
+        /* REDUÇÃO CHAVE para mobile */
+        width: 130px;
+        height: 130px;
+    }
+
+    .procedimento p {
+        font-size: 0.9em; /* Reduz o tamanho do nome do procedimento */
+    }
+
+
+    /* 3. Seção de Apresentação (Perfil e Texto) */
+    .secao-apresentacao {
+        /* Muda o alinhamento para empilhar os itens: Imagem em cima, Texto embaixo */
+        flex-direction: column; 
+        align-items: center; 
+        padding: 0 10px;
+        margin-top: 20px;
+        max-width: 100%;
+    }
+
+    .imagem-perfil-esquerda {
+        /* Reduz mais a imagem no mobile */
+        width: 200px; 
+        margin-bottom: 20px; /* Adiciona espaço abaixo da imagem */
+    }
+
+    .box-texto-abaixo {
+        /* Ocupa a largura total da tela no mobile */
+        width: 100%; 
+        max-width: 95%; 
+        margin-left: 0; /* Remove a margem esquerda que usávamos no desktop */
+        padding: 15px;
+        text-align: center;
+    }
+    
+    .box-texto-abaixo h2 {
+        font-size: 1.2em;
+        text-align: center;
+    }
+
+    .box-texto-abaixo p {
+        font-size: 0.9em;
+        text-align: justify;
+    }
+}
